@@ -1,16 +1,16 @@
 const Product = require("./product");
-const PRODUCT_TYPES = require("../types/product-types")
+const PRODUCT_TYPES = require("../types/product-types");
 
-const _MAX_PRICE = 80
+const _MAX_PRICE = 80;
 class MegaCoverage extends Product {
-    constructor(sellIn) {
-        super(PRODUCT_TYPES.MEGA_COVERAGE, sellIn, _MAX_PRICE)
-    }
-    _updatePrice() { }
-    update() {
-        super._updateSellIn()
-        this._updatePrice()
-    }
+  constructor(sellIn) {
+    super(PRODUCT_TYPES.MEGA_COVERAGE, sellIn, _MAX_PRICE);
+  }
+  _updatePrice() {}
+  update() {
+    super._updateSellIn();
+    this._updatePrice();
+  }
 }
 
-module.exports = MegaCoverage
+module.exports = MegaCoverage;
