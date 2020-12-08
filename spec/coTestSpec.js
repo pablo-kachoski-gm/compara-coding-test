@@ -29,9 +29,11 @@ describe("Co Test", function () {
   });
   //"Full Coverage" actually increases in price the older it gets.
   it("should update Full Coverage product price", function () {
-    const coTest = new CarInsurance([productFactory.create("Full Coverage", 0, 4)]);
-    const products = coTest.updatePrice();
+    const coTest = new CarInsurance([productFactory.create("Full Coverage", 1, 4)]);
+    let products = coTest.updatePrice();
     expect(products[0].price).equal(5);
+    products = coTest.updatePrice();
+    expect(products[0].price).equal(7);
   });
   //"Mega Coverage", being a legendary product, never has to be sold or decreases in price.
   //"Mega Coverage" is a legendary product and as such its price is 80 and it never alters.
@@ -83,7 +85,7 @@ describe("Co Test", function () {
     expect(products[0].sellIn).equal(0);
     //Twice product price degrade speed when negative 
     products = coTest.updatePrice();
-    expect(products[0].price).equal(-2);
+    expect(products[0].price).equal(0);
     expect(products[0].sellIn).equal(-1);
   });
 

@@ -2,7 +2,6 @@ const MIN_PRODUCT_PRICE = 0;
 const PRICE_DEGRADE = 1;
 class Product {
     constructor(name, sellIn, price) {
-        if (price < MIN_PRODUCT_PRICE) throw Error("Invalid arguments");
         this.name = name;
         this.sellIn = sellIn;
         this.price = price;
