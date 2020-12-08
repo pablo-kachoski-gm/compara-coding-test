@@ -1,16 +1,16 @@
 const CarInsurance = require('./models/car-insurance');
-const Product = require('./models/product');
+const productFactory = require('./factories/product-factory');
 
 const productsAtDayZero = [
-    new Product('Medium Coverage', 10, 20),
-    new Product('Full Coverage', 2, 0),
-    new Product('Low Coverage', 5, 7),
-    new Product('Mega Coverage', 0, 80),
-    new Product('Mega Coverage', -1, 80),
-    new Product('Special Full Coverage', 15, 20),
-    new Product('Special Full Coverage', 10, 49),
-    new Product('Special Full Coverage', 5, 49),
-    new Product('Super Sale', 3, 6),
+    productFactory.create('Medium Coverage', 10, 20),
+    productFactory.create('Full Coverage', 2, 0),
+    productFactory.create('Low Coverage', 5, 7),
+    productFactory.create('Mega Coverage', 0, 80),
+    productFactory.create('Mega Coverage', -1, 80),
+    productFactory.create('Special Full Coverage', 15, 20),
+    productFactory.create('Special Full Coverage', 10, 49),
+    productFactory.create('Special Full Coverage', 5, 49),
+    productFactory.create('Super Sale', 3, 6),
 ];
 
 const carInsurance = new CarInsurance(productsAtDayZero);
